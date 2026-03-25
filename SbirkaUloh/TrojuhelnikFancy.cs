@@ -14,11 +14,15 @@ namespace SbirkaUloh
     {  
         public static double Vzdalenost (double x1, double x2, double y1, double y2)
         {
-
+            double a = x2 - x1;
+            double b = y2 - y1;
+            double vzdalenost = Math.Sqrt(Math.Pow(a,2)+Math.Pow(b,2)); //vzdálenost dvou bodů odpovídá velikosti jejich vektoru
+            return vzdalenost;
         }
         static void Main(string[] args)
         {
-
+            double a, b, c, d, e, f;
+            
         }
     }
 }
