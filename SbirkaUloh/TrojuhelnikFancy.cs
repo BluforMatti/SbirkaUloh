@@ -21,8 +21,7 @@ namespace SbirkaUloh
         }
         static void Main(string[] args)
         {
-            double a, b, c, d, e, f;
-            
+
         }
     }
 }
