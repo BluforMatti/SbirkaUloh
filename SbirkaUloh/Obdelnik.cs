@@ -14,31 +14,49 @@ namespace SbirkaUloh
  */
     internal class Program
     {
-        static void Metoda (int[] dvojice)
+        static void Metoda(List<int> dvojice)
         {
-            Console.WriteLine("Šířka  |   Výška   |    Obsah");
-            for (int i = 0; i < dvojice.Length; i+=2)
+            Console.WriteLine("Č. | Šířka | Výška | Obsah");
+
+            int radek = 1;
+
+            for (int i = 0; i < dvojice.Count; i += 2)
             {
-                if (dvojice[i] * dvojice[i + 1] > 12)
+                int sirka = dvojice[i];
+                int vyska = dvojice[i + 1];
+
+                int obvod = 2 * (sirka + vyska);
+                int obsah = sirka * vyska;
+
+                if (obvod > 12)
                 {
-                    Console.WriteLine($"  {dvojice[i]}          {dvojice[i+1]}            {dvojice[i] * dvojice[i + 1]}");
+                    Console.WriteLine($"{radek}  |   {sirka}   |   {vyska}   |   {obsah}");
+                    radek++;
                 }
             }
         }
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Zadej dvojici čísel oddělenou mezerníkem");
-            string input;
-            string[] temp;
-            while ((input = Console.ReadLine()) != "0 0")
+            Console.OutputEncoding = Encoding.UTF8;
+            List<int> dvojice = new List<int>();
+            Console.WriteLine("Zadej dvojice čísel (0 0 pro konec):");
+
+            while (true)
             {
-                temp = input.Split(' ');
+                string input = Console.ReadLine();
+                string[] temp = input.Split(' ');
+
+                int a = int.Parse(temp[0]);
+                int b = int.Parse(temp[1]);
+
+                if (a == 0 && b == 0)
+                    break;
+
+                dvojice.Add(a);
+                dvojice.Add(b);
             }
-            foreach (string s in temp)
-            {
-                Console.WriteLine(s);
-            }
+            Metoda(dvojice);
         }
     }
 }

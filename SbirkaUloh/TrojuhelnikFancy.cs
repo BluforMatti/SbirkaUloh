@@ -21,7 +21,7 @@ namespace SbirkaUloh
         }
         static void Main(string[] args)
         {
-            
+
         }
     }
 }
