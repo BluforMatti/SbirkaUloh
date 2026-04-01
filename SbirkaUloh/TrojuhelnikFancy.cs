@@ -11,17 +11,29 @@ namespace SbirkaUloh
     vrcholů trojúhelníka v rovině a spočítá velikosti všech tří jeho stran.
   */
     internal class Program
-    {  
-        public static double Vzdalenost (double x1, double x2, double y1, double y2)
+    {
+        public static double Vzdalenost(double dvojice)
         {
-            double a = x2 - x1;
-            double b = y2 - y1;
-            double vzdalenost = Math.Sqrt(Math.Pow(a,2)+Math.Pow(b,2)); //vzdálenost dvou bodů odpovídá velikosti jejich vektoru
-            return vzdalenost;
+
         }
         static void Main(string[] args)
         {
+            List<int> dvojice = new List<int>();
+            Console.WriteLine("Zadej souřadnice bodu:");
+            while (true)
+            {
+                string input = Console.ReadLine();
+                string[] temp = input.Split(' ');
 
+                int a = int.Parse(temp[0]);
+                int b = int.Parse(temp[1]);
+
+                if (a == 0 && b == 0)
+                    break;
+
+                dvojice.Add(a);
+                dvojice.Add(b);
+            }
         }
     }
 }
