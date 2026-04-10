@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Kopirovani.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrojuhelnikFancy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
